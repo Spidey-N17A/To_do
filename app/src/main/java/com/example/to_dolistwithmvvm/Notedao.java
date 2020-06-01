@@ -26,5 +26,5 @@ public interface Notedao {
     void deleteallnotes();
 
     @Query("Select * From note_table ORDER BY priortiy desc")
-    List<ContactsContract.CommonDataKinds.Note>getallnotes();
+    List<>getallnotes();
 }
