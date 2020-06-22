@@ -1,11 +1,11 @@
 package com.example.to_dolistwithmvvm;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "note_table")
 public class note {
-
-
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String title;
     private String disc;

@@ -10,7 +10,7 @@ import java.util.List;
 public class NoteRepository {
     private NoteDao noteDao;
     private LiveData<List<note>> allnotes;
-    private NoteRepository(Application application)
+    public NoteRepository(Application application)
     {
         NoteDatabase Database = NoteDatabase.getInstance(application);
         noteDao = Database.noteDao();
@@ -27,8 +27,12 @@ public class NoteRepository {
         new DeleteNoteAsyncTask(noteDao).execute(note);
 
     }
-    public void deleteallnotes(note note){
+    public void deleteallnotes(){
         new DeleteallNotesAsyncTask(noteDao).execute();
+    }
+
+    public LiveData<List<note>> getAllnotes(){
+        return allnotes;
     }
 
     public static class InsertNoteAsyncTask extends AsyncTask<note,Void,Void>{
