@@ -30,7 +30,7 @@ public abstract class NoteDatabase extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            new PopulatedbAsyncTask(instance);
+            new PopulatedbAsyncTask(instance).execute();
         }
     };
 
