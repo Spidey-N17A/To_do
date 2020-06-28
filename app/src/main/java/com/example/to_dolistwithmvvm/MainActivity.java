@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.RecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
+       // recyclerView.setHasFixedSize(true);
 
         final NoteAdapter adapter = new NoteAdapter();
         recyclerView.setAdapter(adapter);
