@@ -30,7 +30,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.Noteholder> {
         note CurrentNote = notes.get(position);
         holder.textViewTitle.setText(CurrentNote.getTitle());
         holder.textViewDescription.setText(CurrentNote.getDisc());
-        holder.textViewPriority.setText(CurrentNote.getPriortiy());
+        holder.textViewPriority.setText(CurrentNote.getPriortiy()+"");
 
     }
 
