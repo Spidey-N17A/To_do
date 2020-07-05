@@ -20,4 +20,16 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/note_item" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="68dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_mood" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
