@@ -1,6 +1,7 @@
 package com.example.to_dolistwithmvvm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class AddNote extends AppCompatActivity {
         numberPickerPriority.setMaxValue(10);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("Add Note");
+
     }
     private void saveNote() {
         String title = editTextTitle.getText().toString();
