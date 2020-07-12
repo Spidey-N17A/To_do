@@ -15,8 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddNote extends AppCompatActivity {
 
-    FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton);
-
+   // FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton);
 
     public static final String EXTRA_TITLE =
             "com.codinginflow.architectureexample.EXTRA_TITLE";
@@ -71,4 +70,4 @@ public class AddNote extends AppCompatActivity {
         }
     }
     }
-}
+
