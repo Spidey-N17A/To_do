@@ -3,43 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
 
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="341dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="11dp"
+        android:layout_width="400dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="9dp"
+        android:fontFamily="sans-serif-light"
         android:text="TextView"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:autoSizeMaxTextSize="10dp"
         app:autoSizeMinTextSize="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:textAllCaps="true" />
 
     <TextView
         android:id="@+id/textViewPriority"
-        android:layout_width="47dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="3dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="128dp"
         android:text="1"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewTitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
     <TextView
         android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
         android:text="Desrciption"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
