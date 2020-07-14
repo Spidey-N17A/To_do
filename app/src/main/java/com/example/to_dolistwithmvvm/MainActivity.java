@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private NoteViewModel noteViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton);
