@@ -22,7 +22,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 1;
+    public static final int EDIT_NOTE_REQUEST = 2;
     private NoteViewModel noteViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -62,7 +64,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Did you do that?", Toast.LENGTH_SHORT).show();
             }
         }).attachToRecyclerView(recyclerView);
+
+        adapter.setOnclicklistenter(new NoteAdapter.OnClickListener() {
+            @Override
+            public void OnItemClick(note note) {
+                Intent intent = new Intent(MainActivity.this, AddNote.class);
+                intent.putExtra(AddNote.EXTRA_ID, note.getId());
+                intent.putExtra(AddNote.EXTRA_DESCRIPTION, note.getDisc());
+                intent.putExtra(AddNote.EXTRA_TITLE, note.getTitle());
+                intent.putExtra(AddNote.EXTRA_PRIORITY, note.getPriortiy());
+                startActivityForResult(intent, EDIT_NOTE_REQUEST);
+            }
+        });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -73,6 +88,22 @@ public class MainActivity extends AppCompatActivity {
             note note = new note(title, description, priority);
             noteViewModel.insert(note);
             Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+        } else if (requestCode == EDIT_NOTE_REQUEST && resultCode == RESULT_OK) {
+            int id = data.getIntExtra(AddNote.EXTRA_ID, -1);
+
+            if (id == -1) {
+                Toast.makeText(this, "NOT updated", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String title = data.getStringExtra(AddNote.EXTRA_TITLE);
+            String description = data.getStringExtra(AddNote.EXTRA_DESCRIPTION);
+            int priority = data.getIntExtra(AddNote.EXTRA_PRIORITY, 1);
+            note note = new note(title , description ,priority);
+            note.setId(id);
+            noteViewModel.update(note);
+            Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
+
         } else {
             Toast.makeText(this, "Note not saved", Toast.LENGTH_SHORT).show();
         }
